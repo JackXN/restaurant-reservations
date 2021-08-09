@@ -15,7 +15,7 @@ function ReservationCard({ reservations, setCancelled }) {
   //implement into dashboard
   useEffect(() => {
     setReservationElements(formatElements(reservations));
-  }, [reservations]);
+  }, [reservations, formatElements]);
 
   function cancelBtnHandler({ target }) {
     if (

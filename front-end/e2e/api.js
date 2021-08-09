@@ -1,5 +1,7 @@
 const fetch = require("cross-fetch");
 
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 /**
  * Defines the default headers for these functions to work with `json-server`
@@ -50,7 +52,7 @@ async function fetchJson(url, options, onCancel) {
  *  a promise that resolves to the newly created reservation.
  */
 async function createReservation(reservation, signal) {
-  const url = `${API_BASE_URL}/reservations`;
+  const url = `${REACT_APP_API_BASE_URL}/reservations`;
   const options = {
     method: "POST",
     headers,
